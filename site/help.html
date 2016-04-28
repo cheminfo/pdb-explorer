@@ -1,226 +1,345 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style>
-.container {
-  display: flex;
-}
-.cell {
-flex: 1;
-}
-.content {
-min-width: 800px;
-}
-</style>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .cell {
+            flex: 1;
+        }
+
+        .content {
+            min-width: 800px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-<div class="cell"></div>
-<div class="cell content">
-<table>
-<tbody><tr>
-<td>
-<h1>PDB-Explorer</h1>
+    <div class="cell"></div>
+    <div class="cell content">
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    <h1>PDB-Explorer</h1>
 
-<ul>
-<li><a href="#video"> Video </a></li><br>
-<li><a href="#Introduction">Introduction</a></li><br>
-<li><a href="#Functionalities in PDB-Explorer">Functionalities in PDB-Explorer</a></li><br>
-<li><a href="#Example with PDB code 4ERW">Example with PDB code 4ERW (Locate Molecule / Similarity Search)</a></li><br>
-<li><a href="#Technical Support">Supported Browsers and Technical Support</a></li><br>
-<li><a href="#References">References</a></li><br>
-</ul>
+                    <ul>
+                        <li><a href="#video"> Video </a></li>
+                        <br>
+                        <li><a href="#Introduction">Introduction</a></li>
+                        <br>
+                        <li><a href="#Functionalities in PDB-Explorer">Functionalities in PDB-Explorer</a></li>
+                        <br>
+                        <li><a href="#Example with PDB code 4ERW">Example with PDB code 4ERW (Locate Molecule /
+                            Similarity Search)</a></li>
+                        <br>
+                        <li><a href="#Technical Support">Supported Browsers and Technical Support</a></li>
+                        <br>
+                        <li><a href="#References">References</a></li>
+                        <br>
+                    </ul>
 
-<br><br>
-<hr noshade="" size="7">
-</td>
-</tr>
-<tr>
-<td>
-<h2> <a name="video"> Video </a></h2>
-<video width="100%" controls>
-  <source src="PDB-explorer.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-<br><br>
-<hr noshade="" size="7">
+                    <br><br>
+                    <hr noshade="" size="7">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2><a name="video"> Video </a></h2>
+                    <video width="100%" controls>
+                        <source src="PDB-explorer.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <br><br>
+                    <hr noshade="" size="7">
 
-</td>
-</tr>
-<tr>
-<td>
+                </td>
+            </tr>
+            <tr>
+                <td>
 
-<h2><a name="Introduction">Introduction</a></h2> 
-<p align="justify">
+                    <h2><a name="Introduction">Introduction</a></h2>
 
-PDB-Explorer is a web application for the interactive visualization of chemical space of RCSB Protein Data Bank (PDB) characterized by protein shape fingerprint (3DP) and shape similarity search for molecules in PDB. The chemical space herein represented as 3DP PCA maps. PDB-Explorer contains X-ray structures from PDB, which is updated daily with the latest PDB additions, ensuring up-to-date coverage.<br> <br>
+                    <p align="justify">
 
-<b>Molecules in PDB-Explorer</b><br><br>
-The X-ray molecules in the application are biological assemblies defined by author. The application provides ribbon images of these molecules using PYMOL. The user can further observe 3D model of molecules by PV viewer or JSMOL visualization window. The molecule presented in PV/JSMOL is cartoon mode, while user can change the representation scheme using the options on right side. In the case of PDB entries with no secondary structures or containing only alpha carbons, the program generated empty images (e.g. PDB ID 1O55 and 1IVI). These structures cannot be displayed by PV or JSmol with default cartoon mode. To observe the structures, one can change the display mode of PV as lines. The JSmol viewer sometimes can detect the secondary structure for the PDB entries that only contain alpha carbons.
-<br><br>
+                        PDB-Explorer is a web application for the interactive visualization of chemical space of RCSB
+                        Protein Data Bank (PDB) characterized by protein shape fingerprint (3DP) and shape similarity
+                        search for molecules in PDB. The chemical space herein represented as 3DP PCA maps. PDB-Explorer
+                        contains X-ray structures from PDB, which is updated daily with the latest PDB additions,
+                        ensuring up-to-date coverage.<br> <br>
 
-<b>Protein Shape Fingerprint(3DP)</b><br><br>
-The 3DP fingerprint perceives the spatial distribution of shape, hydrophobicity and charges in molecular objects across a very broad size range. To know more about 3DP please visit the reference section.<br><br>
+                        <b>Molecules in PDB-Explorer</b><br><br>
+                        The X-ray molecules in the application are biological assemblies defined by author. The
+                        application provides ribbon images of these molecules using PYMOL. The user can further observe
+                        3D model of molecules by PV viewer or JSMOL visualization window. The molecule presented in
+                        PV/JSMOL is cartoon mode, while user can change the representation scheme using the options on
+                        right side. In the case of PDB entries with no secondary structures or containing only alpha
+                        carbons, the program generated empty images (e.g. PDB ID 1O55 and 1IVI). These structures cannot
+                        be displayed by PV or JSmol with default cartoon mode. To observe the structures, one can change
+                        the display mode of PV as lines. The JSmol viewer sometimes can detect the secondary structure
+                        for the PDB entries that only contain alpha carbons.
+                        <br><br>
 
-<b>3DP PCA Maps</b><br><br>
-It is the representation of PC planes (PC1-PC2 or PC2-PC3 or PC1-PC3) obtained after Principal component analysis of the 200-dimensional 3DP-similarity space for PDB dataset. All the maps have been produced on a grid of size 300x300. Each of the map color coded separately using different properties:<br><br>
+                        <b>Protein Shape Fingerprint(3DP)</b><br><br>
+                        The 3DP fingerprint perceives the spatial distribution of shape, hydrophobicity and charges in
+                        molecular objects across a very broad size range. To know more about 3DP please visit the
+                        reference section.<br><br>
 
-Average heavy atom count of molecules at given point on the map(Heavy atom count).<br>
-Average percentage of hydrophobic atom count of molecules at given point on the map(% Hydrophobic Charge Atom).<br>
-Average percentage of negative charge atom count of molecules at given point on the map.(% Negative Charge Atom).<br>
-Average percentage of positive charge atom count of molecules at given point on the map.(% Positive Charge Atom).<br>
-Average molecular volume occupancy (mvo, &#8491;<sup>3</sup>/atom) of molecules at given point on the map, a property defined here as the volume of the sphere with a radius corresponding to the average distance of all atoms to the center of gravity, divided by the total number of atoms (Molecular Volume Occupancy).<br>
-Average normalized PMI value of molecules at given point on the map(nPMI).<br>
-Number of molecules occupying given point on the map(Occupancy).<br><br>
+                        <b>3DP PCA Maps</b><br><br>
+                        It is the representation of PC planes (PC1-PC2 or PC2-PC3 or PC1-PC3) obtained after Principal
+                        component analysis of the 200-dimensional 3DP-similarity space for PDB dataset. All the maps
+                        have been produced on a grid of size 300x300. Each of the map color coded separately using
+                        different properties:<br><br>
 
-One such map (representation of PC1-PC2 plane) for PDB which is color coded according to heavy atom count property is shown below. 
+                        Average heavy atom count of molecules at given point on the map(Heavy atom count).<br>
+                        Average percentage of hydrophobic atom count of molecules at given point on the map(%
+                        Hydrophobic Charge Atom).<br>
+                        Average percentage of negative charge atom count of molecules at given point on the map.(%
+                        Negative Charge Atom).<br>
+                        Average percentage of positive charge atom count of molecules at given point on the map.(%
+                        Positive Charge Atom).<br>
+                        Average molecular volume occupancy (mvo, &#8491;<sup>3</sup>/atom) of molecules at given point
+                        on the map, a property defined here as the volume of the sphere with a radius corresponding to
+                        the average distance of all atoms to the center of gravity, divided by the total number of atoms
+                        (Molecular Volume Occupancy).<br>
+                        Average normalized PMI value of molecules at given point on the map(nPMI).<br>
+                        Number of molecules occupying given point on the map(Occupancy).<br><br>
 
-</p><p align="center"><img src="helpImages/hac.png" alt="image description" height="250" width="400"></p> 
-<p align="center" <b="">Figure 1: 3DP PCA map for PDB color coded by Heavy Atom Count property</p>
+                        One such map (representation of PC1-PC2 plane) for PDB which is color coded according to heavy
+                        atom count property is shown below.
 
-<b>Color Coding</b><br><br>
-For color coding we used HSL color space(Figure 2). HSL is short for Hue, Saturation and Luminance (or brightness). To specify any one color in HSL color space we need three values Viz.
+                    </p>
 
-Hue (H) = Specify Color (0-6 or 0-360 degree); Saturation (S) = Saturation level of color and Luminance= Brightness of color (0-100%)
-0=black color, 50=darker version of color, 100=white color. Saturation value of 0 (0%) means "center of the wheel", e.g. a grey value, whereas a saturation value of 1 (100%) means "at the border of the wheel", where the color is fully saturated. 
+                    <p align="center"><img src="helpImages/hac.png" alt="image description" height="250" width="400">
+                    </p>
 
-<p align="center"><img src="helpImages/hsl.png" alt="image description" height="220" width="250"></p>
-<p align="center" <b="">Figure 2: HSL color space</p>
+                    <p align="center" <b="">Figure 1: 3DP PCA map for PDB color coded by Heavy Atom Count property</p>
 
-Color for any given point on 3DP PCA map was determined by "Average property", "Standard deviation" and "number of molecules" at that point, which corresponds to Hue, Saturation and Lightness respectively in HSL color space.  <br> <br>
+                    <b>Color Coding</b><br><br>
+                    For color coding we used HSL color space(Figure 2). HSL is short for Hue, Saturation and Luminance
+                    (or brightness). To specify any one color in HSL color space we need three values Viz.
 
-"Average property" at given point determines base color, while shade of specify base color changes according to "Standard deviation" and "number of molecules" at given point. With increasing "Standard deviation" color changes more towards the grey scale. <br> <br>
+                    Hue (H) = Specify Color (0-6 or 0-360 degree); Saturation (S) = Saturation level of color and
+                    Luminance= Brightness of color (0-100%)
+                    0=black color, 50=darker version of color, 100=white color. Saturation value of 0 (0%) means "center
+                    of the wheel", e.g. a grey value, whereas a saturation value of 1 (100%) means "at the border of the
+                    wheel", where the color is fully saturated.
 
-For all the maps lowest "property value" represented by blue color. With the increasing "property value" color changes from " <font color="red"> blue </font> to <font color="cyan">cyan </font>to <font color="green">green</font> to <font color="yellow">yellow</font> to <font color="red">red</font> to <font color="magenta">magenta </font>". 
+                    <p align="center"><img src="helpImages/hsl.png" alt="image description" height="220" width="250">
+                    </p>
 
-<br><br>
-<b>Similarity Measure</b><br><br>
-Similarity Measure is a mathematical calculation that quantifies similarity between two objects (molecules). In the application presented here, we have used City Block Distance (CBD) to calculate dis-similarity (distance) of molecules with respect to given query molecule. The list of retrieved compounds then sorted according to increasing CBD distance.
+                    <p align="center" <b="">Figure 2: HSL color space</p>
 
-Once represented in the form of fingerprint(vector), the City block distance between two molecules(CBD<sub>A,B</sub>), A and B, with P dimensions is calculated as:
-<p align="center"><img src="helpImages/cbd.png" alt="image description" height="86.5" width="296"></p>
+                    Color for any given point on 3DP PCA map was determined by "Average property", "Standard deviation"
+                    and "number of molecules" at that point, which corresponds to Hue, Saturation and Lightness
+                    respectively in HSL color space. <br> <br>
 
-<p></p>
-<hr noshade="" size="7">
+                    "Average property" at given point determines base color, while shade of specify base color changes
+                    according to "Standard deviation" and "number of molecules" at given point. With increasing
+                    "Standard deviation" color changes more towards the grey scale. <br> <br>
 
-<!--Section2----------------------------------------------------------------------------------------------------------->
-<h2><a name="Functionalities in PDB-Explorer">Functionalities in PDB-Explorer</a></h2>
-<p align="justify">
+                    For all the maps lowest "property value" represented by blue color. With the increasing "property
+                    value" color changes from " <font color="red"> blue </font> to <font color="cyan">cyan </font>to
+                    <font color="green">green</font> to <font color="yellow">yellow</font> to <font
+                        color="red">red</font> to <font color="magenta">magenta </font>".
 
-<font color="Blue"><b>Choose the Map (Select image):</b></font><br><br>
+                    <br><br>
+                    <b>Similarity Measure</b><br><br>
+                    Similarity Measure is a mathematical calculation that quantifies similarity between two objects
+                    (molecules). In the application presented here, we have used City Block Distance (CBD) to calculate
+                    dis-similarity (distance) of molecules with respect to given query molecule. The list of retrieved
+                    compounds then sorted according to increasing CBD distance.
 
-For the list of available maps can be obtained by clicking on the Map "combo box". By default the "Heavy atom count" map is display. All the maps are of size 300x300 pixels.<br><br> 
+                    Once represented in the form of fingerprint(vector), the City block distance between two
+                    molecules(CBD<sub>A,B</sub>), A and B, with P dimensions is calculated as:
+                    <p align="center"><img src="helpImages/cbd.png" alt="image description" height="86.5" width="296">
+                    </p>
 
-<font color="Blue"><b>Mouse Move:</b></font> <br><br>
+                    <p></p>
+                    <hr noshade="" size="7">
 
-Moving the mouse over the map will show the following information:<br><br>
-<i><b>Name:</b></i> The PDB code of average molecule at the given point on the map</br> </br>
-<i><b>Position:</b></i> The XY coordinates for the mouse cursor position on the map</br> </br>
-<i><b>Molecule Image:</b></i> Displays ribbon structure image of average molecule at the given point on the map<br> <br>
-<i><b>Average:</b></i> Displays the "average property" at the given point on the map<br> <br>
-<i><b>Deviation:</b></i> Displays the standard deviation of "average property" at the given point on the map<br><br>
+                    <!--Section2----------------------------------------------------------------------------------------------------------->
+                    <h2><a name="Functionalities in PDB-Explorer">Functionalities in PDB-Explorer</a></h2>
 
-<font color="Blue"><b>Mouse Wheel Motion:</b></font> <br><br>
+                    <p align="justify">
 
-Moving the mouse wheel in forward direction will zoom into the map. While moving the mouse wheel in backward direction will zoom out of the map. <br><br>
+                        <font color="Blue"><b>Choose the Map (Select image):</b></font><br><br>
 
-<font color="Blue"><b>Mouse Double click:</b></font> <br><br>
+                        For the list of available maps can be obtained by clicking on the Map "combo box". By default
+                        the "Heavy atom count" map is display. All the maps are of size 300x300 pixels.<br><br>
 
-Double clicking at any given point on the map will provide full view of the map. <br><br>
+                        <font color="Blue"><b>Mouse Move:</b></font> <br><br>
 
-<font color="Blue"><b>Mouse Dragging:</b></font><br><br>
+                        Moving the mouse over the map will show the following information:<br><br>
+                        <i><b>Name:</b></i> The PDB code of average molecule at the given point on the map</br> </br>
+                        <i><b>Position:</b></i> The XY coordinates for the mouse cursor position on the map</br> </br>
+                        <i><b>Molecule Image:</b></i> Displays ribbon structure image of average molecule at the given
+                        point on the map<br> <br>
+                        <i><b>Average:</b></i> Displays the "average property" at the given point on the map<br> <br>
+                        <i><b>Deviation:</b></i> Displays the standard deviation of "average property" at the given
+                        point on the map<br><br>
 
-Mouse Dragging will help to move the map in display area. <br><br>
+                        <font color="Blue"><b>Mouse Wheel Motion:</b></font> <br><br>
 
-<font color="Blue"><b>Mouse Single Click: </b></font> <br><br>
+                        Moving the mouse wheel in forward direction will zoom into the map. While moving the mouse wheel
+                        in backward direction will zoom out of the map. <br><br>
 
-Single clicking on one pixel of the map (red droplet) will display the PDB entries occupying the given point and show their cartoon images in the table of protein list.<br><br> 
+                        <font color="Blue"><b>Mouse Double click:</b></font> <br><br>
 
-<i><b>Protein List</b></i>: The molecules in the given point of map are displayed in the order of PC3 values. "Jsmol" option is available to look 3D structure of selected molecule with JSMOL. "pdb.org" option will allow you to link the selected molecule to parent PDB database to look for detail information. Clicking on one table cell of protein list can do furthur shape similarity search by displaying select PDB code in the "Sort by similarity" box automatically.<br> <br>
+                        Double clicking at any given point on the map will provide full view of the map. <br><br>
 
-<i><b>Download Zip</b></i>: Clicking on this option will allow you to save file containing 3D coordinates for all the molecules occupying the given point on the map.  <br><br>
+                        <font color="Blue"><b>Mouse Dragging:</b></font><br><br>
 
-<font color="Blue"><b>Drop your PDB file here:</b></font><br><br>
-User can upload their molecule in standard PDB format to observe its position on the map (black droplet) and to search similar molecules from PDB database. The application only considers atoms assigned as "ATOM" in PDB file. Therefore, the the non-standard residues or organic molecules which are considered as part of molecular shape, should be written as "ATOM" instead of "HETATM". One can click the "Drop your pdb file" box, and upload pdb. The similar molecules from PDB database based on default search condition (Max Count:100; Max Distance:10000) can be showed in the table of protein list by the ranking automatically.<br><br>
+                        Mouse Dragging will help to move the map in display area. <br><br>
 
-<font color="Blue"><b>Lookup a list of PDBs:</b></font><br><br>
+                        <font color="Blue"><b>Mouse Single Click: </b></font> <br><br>
 
-This option allows the users to locate one or more molecules of their interest on the map (yellow droplets).<br><br>
+                        Single clicking on one pixel of the map (red droplet) will display the PDB entries occupying the
+                        given point and show their cartoon images in the table of protein list.<br><br>
 
-<font color="Blue"><b>Sort by similarity:</b></font><br><br>
-Search similar molecules for query PDB entry based on CBD value from 3DP. Enter a valid PDB code and select the search condition. "Max Count" will search for specified number of molecules from database which are most similar to input query molecule. "Max Distance" will search for similar molecules from database which are having distance less than or equal to distance specified by user with respect to query molecule. Click "search by similarity" button and the result will be displayed in the table below by the ranking. One can observe the position of query molecule on the map with blue color droplet.
-<br><br>
+                        <i><b>Protein List</b></i>: The molecules in the given point of map are displayed in the order
+                        of PC3 values. "Jsmol" option is available to look 3D structure of selected molecule with JSMOL.
+                        "pdb.org" option will allow you to link the selected molecule to parent PDB database to look for
+                        detail information. Clicking on one table cell of protein list can do furthur shape similarity
+                        search by displaying select PDB code in the "Sort by similarity" box automatically.<br> <br>
 
-<font color="Blue"><b>HELP: </b></font> <br><br>
-Open the Help document in Browser.<br><br> 
+                        <i><b>Download Zip</b></i>: Clicking on this option will allow you to save file containing 3D
+                        coordinates for all the molecules occupying the given point on the map. <br><br>
 
-<br>
-</p>
-<hr noshade="" size="7"> 
-<h2><a name="Example with PDB code 4ERW">Example with PDB code 4ERW</a></h2>
-<p align="justify">
+                        <font color="Blue"><b>Drop your PDB file here:</b></font><br><br>
+                        User can upload their molecule in standard PDB format to observe its position on the map (black
+                        droplet) and to search similar molecules from PDB database. The application only considers atoms
+                        assigned as "ATOM" in PDB file. Therefore, the the non-standard residues or organic molecules
+                        which are considered as part of molecular shape, should be written as "ATOM" instead of
+                        "HETATM". One can click the "Drop your pdb file" box, and upload pdb. The similar molecules from
+                        PDB database based on default search condition (Max Count:100; Max Distance:10000) can be showed
+                        in the table of protein list by the ranking automatically.<br><br>
 
-Example is shown to observe molecule (4ERW) on the map and use it for similarity searching. 4ERW is Cyclin-dependent kinase 2.<br><br>
+                        <font color="Blue"><b>Lookup a list of PDBs:</b></font><br><br>
 
-<font color="Blue"><b>1) Locate Molecule</b></font><br><br>
-Write down the PDB ID in the provided text field of "Lookup a list of PDBs to observe the position of 4ERW on different maps (yellow droplet).<br><br>
+                        This option allows the users to locate one or more molecules of their interest on the map
+                        (yellow droplets).<br><br>
 
-<font color="Blue"><b>2) Show Molecules in the Same Pixel</b></font><br><br> 
-Single clicking the yellow marked pixel on the map allows you to look the molecules occupying the same point with 4ERW on the map (red droplet). In this expample, 32 molecules are in the same pixel with 4ERW.
-<p><img src="helpImages/4erwFig1.png" alt="image description" height="465" width="600">
-</p>
+                        <font color="Blue"><b>Sort by similarity:</b></font><br><br>
+                        Search similar molecules for query PDB entry based on CBD value from 3DP. Enter a valid PDB code
+                        and select the search condition. "Max Count" will search for specified number of molecules from
+                        database which are most similar to input query molecule. "Max Distance" will search for similar
+                        molecules from database which are having distance less than or equal to distance specified by
+                        user with respect to query molecule. Click "search by similarity" button and the result will be
+                        displayed in the table below by the ranking. One can observe the position of query molecule on
+                        the map with blue color droplet.
+                        <br><br>
 
-<font color="Blue"><b>3) Similarity Search</b></font><br><br>
-<i><b>Step 1) Enter PDB code (4ERW)</b></i><br><br>
-Write down query PDB code in the "Enter pdb code" of "Sort by similarity". <br><br>
-<i><b>Step 2) Select the Search Options </b></i><br><br>
+                        <font color="Blue"><b>HELP: </b></font> <br><br>
+                        Open the Help document in Browser.<br><br>
 
-<i>Max Count:</i> It will search for specified number of molecules from database which are most similar to input query molecule. In example below the Max Count set to 100. <br>
+                        <br>
+                    </p>
+                    <hr noshade="" size="7">
+                    <h2><a name="Example with PDB code 4ERW">Example with PDB code 4ERW</a></h2>
 
-<i>Max Distance:</i> It will search for similar molecules from database which are having distance less than or equal to distance specified by user with respect to query molecule (default value is 1000).<br><br>
+                    <p align="justify">
 
-<i><b>Step 3) Hit "Search by similarity" Button and Wait for Result</b></i>
+                        Example is shown to observe molecule (4ERW) on the map and use it for similarity searching. 4ERW
+                        is Cyclin-dependent kinase 2.<br><br>
 
-<i><b>Step 4) Result Window </b></i><br><br>
-Result window is shown below.
-<p><img src="helpImages/4erwFig2.png" height="496" width="600"></p>
+                        <font color="Blue"><b>1) Locate Molecule</b></font><br><br>
+                        Write down the PDB ID in the provided text field of "Lookup a list of PDBs to observe the
+                        position of 4ERW on different maps (yellow droplet).<br><br>
 
-<b>A)</b>shows query enter box and search options.<br>
-<b>B)</b>PV viewer panel will automatically display ribbon structure of 4ERW.<br>
-<b>C)</b>shows the list of similar molecules retrieved from the PDB database with PDB code, ribbon image, the ranking, and the distance to query (4ERW).<br>
+                        <font color="Blue"><b>2) Show Molecules in the Same Pixel</b></font><br><br>
+                        Single clicking the yellow marked pixel on the map allows you to look the molecules occupying
+                        the same point with 4ERW on the map (red droplet). In this expample, 32 molecules are in the
+                        same pixel with 4ERW.
 
-<b>D)</b>two options are available to observe further information of selected result molecule. "pdb.org" can open the parent PDB database to look for detail information of select molecule. "Jsmol" can display 3D structure of selected molecule by JSMOL.<br>
-<p></p>
-<hr noshade="" size="7"> 
+                    <p><img src="helpImages/4erwFig1.png" alt="image description" height="465" width="600">
+                    </p>
 
-<h2><a name="Technical Support">Supported Browsers and Technical Support</a></h2>
-<p align="justify">
-The application works best in Chrome.
-Supported browsers:<a href="https://www.google.com/chrome/browser/desktop/index.html"> Chrome </a> (v42), <a href="https://www.mozilla.org"> Firefox </a> (v36), Safari 9 (preview).<br/>
-Safari 8, Internet explorer and Edge are not yet supported.
-For any suggestions and questions regarding application please free to contact us at:  <font color="Blue"><a>xian.jin@dcb.unibe.ch</a></font><br><br>
-</p>
-<hr noshade="" size="7"> 
-<h2><a name="References">References</a></h2>
-<p align="justify">
+                    <font color="Blue"><b>3) Similarity Search</b></font><br><br>
+                    <i><b>Step 1) Enter PDB code (4ERW)</b></i><br><br>
+                    Write down query PDB code in the "Enter pdb code" of "Sort by similarity". <br><br>
+                    <i><b>Step 2) Select the Search Options </b></i><br><br>
 
-</p><li><a href="http://www.rcsb.org/" target="_blank">http://www.rcsb.org/</a><br>
+                    <i>Max Count:</i> It will search for specified number of molecules from database which are most
+                    similar to input query molecule. In example below the Max Count set to 100. <br>
 
-</li><li><a href="http://nar.oxfordjournals.org/content/28/1/235.long" target="_blank">The Protein Data Bank. H.M. Berman, J. Westbrook, Z. Feng, G. Gilliland, T.N. Bhat, H. Weissig, I.N. Shindyalov, P.E. Bourne, Nucleic Acids Res. 2000, 28, 235-242.</a><br>
+                    <i>Max Distance:</i> It will search for similar molecules from database which are having distance
+                    less than or equal to distance specified by user with respect to query molecule (default value is
+                    1000).<br><br>
 
-</li><li><a href="http://pubs.acs.org/doi/abs/10.1021/ci300513m" target="_blank">The MQN-Mapplet: Visualization of Chemical Space with Interactive Maps of DrugBank. M. Awale, R. van Deursen, J. L. Reymond, ChEMBL, PubChem, GDB-11 and GDB-13. J. Chem. Inf. Model. 2013, 53, 509-518. </a><br>
+                    <i><b>Step 3) Hit "Search by similarity" Button and Wait for Result</b></i>
 
-</li><li><a href="http://www.jcheminf.com/content/7/1/3" target="_blank">Stereoselective virtual screening of the ZINC database using atom pair 3D-fingerprints. M. Awale, X. Jin, J. L. Reymond. J. Cheminform. 2015, 7, 3.</a><br>
+                    <i><b>Step 4) Result Window </b></i><br><br>
+                    Result window is shown below.
+                    <p><img src="helpImages/4erwFig2.png" height="496" width="600"></p>
 
-</li><li><a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1747-0285.2007.00579.x/abstract;jsessionid=39D8D883D1B0B049228B31393C0DD571.f02t01" target="_blank">A similarity-based data-fusion approach to the visual characterization and comparison of compound databases. J. L. Medina-Franco, G. M. Maggiora, M. A. Giulianotti, C. Pinilla, R. A. Houghten. Chem. Biol. Drug. Des. 2007, 70, 393-412. </a><br><br> 
+                    <b>A)</b>shows query enter box and search options.<br>
+                    <b>B)</b>PV viewer panel will automatically display ribbon structure of 4ERW.<br>
+                    <b>C)</b>shows the list of similar molecules retrieved from the PDB database with PDB code, ribbon
+                    image, the ranking, and the distance to query (4ERW).<br>
 
-<p></p>
-<hr noshade="" size="7">
+                    <b>D)</b>two options are available to observe further information of selected result molecule.
+                    "pdb.org" can open the parent PDB database to look for detail information of select molecule.
+                    "Jsmol" can display 3D structure of selected molecule by JSMOL.<br>
 
-</li></td>
-</tr>
+                    <p></p>
+                    <hr noshade="" size="7">
 
-</tbody></table>
+                    <h2><a name="Technical Support">Supported Browsers and Technical Support</a></h2>
+
+                    <p align="justify">
+                        The application works best in Chrome.
+                        Supported browsers:<a href="https://www.google.com/chrome/browser/desktop/index.html">
+                        Chrome </a> (v42), <a href="https://www.mozilla.org"> Firefox </a> (v36), Safari 9
+                        (preview).<br/>
+                        Safari 8, Internet explorer and Edge are not yet supported.
+                        For any suggestions and questions regarding application please free to contact us at: <font
+                            color="Blue"><a>xian.jin@dcb.unibe.ch</a></font><br><br>
+                    </p>
+                    <hr noshade="" size="7">
+                    <h2><a name="References">References</a></h2>
+
+                    <p align="justify">
+
+                    </p>
+                    <li><a href="http://www.rcsb.org/" target="_blank">http://www.rcsb.org/</a><br>
+
+                    </li>
+                    <li><a href="http://nar.oxfordjournals.org/content/28/1/235.long" target="_blank">The Protein Data
+                        Bank. H.M. Berman, J. Westbrook, Z. Feng, G. Gilliland, T.N. Bhat, H. Weissig, I.N. Shindyalov,
+                        P.E. Bourne, Nucleic Acids Res. 2000, 28, 235-242.</a><br>
+
+                    </li>
+                    <li><a href="http://pubs.acs.org/doi/abs/10.1021/ci300513m" target="_blank">The MQN-Mapplet:
+                        Visualization of Chemical Space with Interactive Maps of DrugBank. M. Awale, R. van Deursen, J.
+                        L. Reymond, ChEMBL, PubChem, GDB-11 and GDB-13. J. Chem. Inf. Model. 2013, 53, 509-518. </a><br>
+
+                    </li>
+                    <li><a href="http://www.jcheminf.com/content/7/1/3" target="_blank">Stereoselective virtual
+                        screening of the ZINC database using atom pair 3D-fingerprints. M. Awale, X. Jin, J. L. Reymond.
+                        J. Cheminform. 2015, 7, 3.</a><br>
+
+                    </li>
+                    <li>
+                        <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1747-0285.2007.00579.x/abstract;jsessionid=39D8D883D1B0B049228B31393C0DD571.f02t01"
+                           target="_blank">A similarity-based data-fusion approach to the visual characterization and
+                            comparison of compound databases. J. L. Medina-Franco, G. M. Maggiora, M. A. Giulianotti, C.
+                            Pinilla, R. A. Houghten. Chem. Biol. Drug. Des. 2007, 70, 393-412. </a><br><br>
+
+                        <p></p>
+                        <hr noshade="" size="7">
+
+                    </li>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="cell"></div>
 </div>
-<div class="cell"></div>
-</div>
-</body></html>
+</body>
+</html>

@@ -1,0 +1,1 @@
+"use strict";define(["jquery","src/header/components/default","src/util/versioning","src/util/util"],function(a,b,c,d){function e(){}return d.inherits(e,b,{_onClick:function(){c.blankView()}}),e});

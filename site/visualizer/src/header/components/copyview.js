@@ -1,0 +1,1 @@
+"use strict";define(["jquery","src/util/ui","src/header/components/default","src/util/versioning","src/util/util"],function(a,b,c,d,e){function f(){}return e.inherits(f,c,{_onClick:function(){b.copyview()}}),f});
