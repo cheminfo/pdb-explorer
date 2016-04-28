@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://www.lactame.com/lib/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://www.lactame.com/lib/uri.js/1.14.1/URI.min.js"></script>
+<style>
+        #ci-visualizer {
+            min-height: 100vh;
+        }
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<script>
+    'use strict';
+    function checkVersion(versions, version) {
+        version = version.toLowerCase();
+	if (version.indexOf("v") != 0 && version !== 'head') version="v"+version;
+        var idx = versions.indexOf(version);
+        if (idx > -1) {
+            version = versions[idx];
+        }
+        else {
+            return 'head';
+        }
+        return version;
+    }
+    window.onload = function () {
+        var version;
+        $.getJSON('http://www.lactame.com/visualizer/versions.php').then(function(versions) {
+            versions.push('head');
+            var url;
+            var uri = new URI(window.location.href);
+            var search = uri.search(true);
+            url = 'http://visualizer.epfl.ch/cheminfo/16e029673e68d05b6df709e29755e6f2/view.json';
+            if(search.viewURL) {
+                url = search.viewURL;
+            }
+            if(search.v) {
+                version = search.v;
+                addVisualizer(checkVersion(versions, version), search);
+            }
+            else {
+       
+                $.ajax({
+                    url: url,
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function(data) {
+                        version = data.version;
+                        addVisualizer(checkVersion(versions, data.version), search);
+                    },
+                    error: function(err) {
+                        console.log('error', err);
+                    }
+                })
+            }
+        });
+
+        function addVisualizer(version, search) {
+            var visualizer = document.createElement('script');
+            var prefix = 'http://' + (search.direct ? 'direct' : 'www') + '.lactame.com/visualizer/';
+console.log(search, prefix);
+            visualizer.setAttribute('data-main', prefix + version + '/init');
+            visualizer.setAttribute('src', prefix + version + '/components/requirejs/require.js');
+            document.head.appendChild(visualizer);
+        }
+    }
+</script>
+        <div id="ci-visualizer" style="margin-top: 15px" data-ci-config="./json/config.json" data-ci-view="http://visualizer.epfl.ch/cheminfo/16e029673e68d05b6df709e29755e6f2/view.json"/>
+</body>
+</html>
