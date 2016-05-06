@@ -8,4 +8,4 @@ git clone https://github.com/cheminfo/pdb-explorer
 ```
 
 and then in your crontab you should add a line to weekly update the data:
-``` cd PDB-EXüöPRER_FOLDER; git pull ``` 
+``` cd PDB-EXPLORER_FOLDER; git pull ``` 
